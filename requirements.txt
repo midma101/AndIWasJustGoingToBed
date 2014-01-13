@@ -8,7 +8,9 @@ flask-wtf==0.9.3
 Flask-Login
 Flask-OpenID
 Flask-Markdown
-
+Jinja2==2.6
+Werkzeug==0.8.3
+gunicorn==0.17.2
 
 # tests
 flask-testing==0.4
