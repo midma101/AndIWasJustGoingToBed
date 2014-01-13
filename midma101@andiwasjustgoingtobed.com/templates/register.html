@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Admin</title>
+        <link rel="shortcut icon" href="/static/images/favicon.ico">
+        <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+        <link href='http://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+        <link href='/static/css/style.css' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <script src="{{ url_for('static', filename='js/lib/jquery-1.9.1.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/lib/ckeditor/ckeditor.js')}}"></script>
+    
+    </head>
+    <body>
+        <h1 id="index-heading">And I Was Just Going To Bed - Register</h1>
+
+        <div id="album-review-container" class="admin blogpost-container">
+            <form name="album-review-form" class="admin blogpost-form" action="" method="post">
+                {{form.csrf_token}}
+                <p>
+                    username:{{form.name}}<br>
+                   <br>
+                </p>
+                <p>
+                    password: {{form.password}}<br>
+                </p>
+                <p>
+                    confirm password: {{form.confirm_password}}<br>
+                </p>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+
+        </div>
+
+    </body>
+</html>

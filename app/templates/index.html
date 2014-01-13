@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Look Down Fools</title>
+        <link rel="shortcut icon" href="/static/images/favicon.ico">
+        <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+        <link href='http://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+        <link href='/static/css/style.css' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <script src="{{ url_for('static', filename='js/lib/jquery-1.9.1.js')}}"></script>
+        
+        
+
+    </head>
+    <body>
+        <h1 id="index-heading">And I Was Just Going To Bed</h1>
+        <div id="allposts-container">
+        {% for post in posts %}
+            <div class="post-container">
+
+                
+                <div class="post-text">
+                    <h4 class="post-title">{{ post.title }}</h2>
+                    <p>
+                        <div class="image-container">
+                            <img class="post-image" src="{{ url_for('static',filename='images/post_images/'+post.picture) }}" />
+                         </div>
+
+                        {{ post.body }}
+
+                        </br>
+                        </br>
+                        <a class="content-links" href="{{ post.link }}" target="_blank">{{ post.link }}</a>
+                        </br>
+                        </br>
+                        <div class='byline-container'>
+                            posted by:&nbsp{{ user.name }}&nbsp@&nbsp{{ post.date_created }}
+                        </div>
+
+
+                    </p>
+
+                </div>
+            </div>
+            </br>
+        {% endfor %}
+        </div>
+    </body>
+</html>
