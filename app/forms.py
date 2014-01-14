@@ -1,13 +1,12 @@
 from flask.ext.wtf import Form
-from wtforms.fields import TextField, PasswordField, BooleanField, FileField
-from flask.ext.pagedown.fields import PageDownField
+from wtforms.fields import TextField, PasswordField, BooleanField, FileField, TextAreaField
 from wtforms.validators import Required, EqualTo, ValidationError
 
 from app import db
 from models import User
 
 class PostForm(Form):
-    body = PageDownField('body')
+    body = TextAreaField('body')
     title = TextField('title')
     link = TextField('link')
     image = FileField(u'upload image')
