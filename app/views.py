@@ -23,7 +23,8 @@ from forms import PostForm, LoginForm, RegisterForm
 def home():
     posts = db.session.query(models.Post).all()
     posts.reverse()
-    user = db.session.query(models.User).filter("users.id="+str(session['user_id'])).first()
+    #user = db.session.query(models.User).filter("users.id="+str(session['user_id'])).first()
+    user = None
     return render_template('index.html', posts=posts, user=user)
 
 @app.route('/login', methods = ['GET', 'POST'])
