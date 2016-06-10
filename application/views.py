@@ -21,11 +21,11 @@ from forms import PostForm, LoginForm, RegisterForm
 
 @app.route('/')
 def home():
-    posts = db.session.query(models.Post).all()
-    posts.reverse()
+    #posts = db.session.query(models.Post).all()
+    #posts.reverse()
     #user = db.session.query(models.User).filter("users.id="+str(session['user_id'])).first()
     user = None
-    return render_template('index.html', posts=posts, user=user)
+    return render_template('index.html', posts=[], user=user)
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
