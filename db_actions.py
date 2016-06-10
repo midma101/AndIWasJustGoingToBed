@@ -10,10 +10,9 @@ engine = create_engine(engine_info)
 connection = engine.connect()
 
 def usage():
-    print("******************************************************")
+    print("\n******************************************************")
     print ("Must add additional arguments when running the script")
-    print("******************************************************")
-    print ("")
+    print("******************************************************\n")
     print ("delete_all           delete all posts")
     print ("load                 load an SQL dump")
     print ("add_user             add a user to the system")
