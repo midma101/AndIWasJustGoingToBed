@@ -57,18 +57,20 @@ class Post(db.Model):
     body = db.Column(db.String())
     title = db.Column(db.String(140))
     picture = db.Column(db.String(256))
+    content_type = db.Column(db.String(140))
     link = db.Column(db.String(2086))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     date_created = db.Column(db.DateTime)
 
 
-    def __init__(self, user_id, link=None, body=None, title=None, picture=None):
+    def __init__(self, user_id, link=None, body=None, title=None, picture=None, content_type='UNKNOWN'):
         self.user_id = user_id
         self.body = body
         self.title = title
         self.date_created = datetime.datetime.utcnow()
         self.link = link
         self.picture = picture
+        self.content_type = content_type
 
     def __repr__(self):
         return '<Post %r>' % (self.title)

@@ -23,14 +23,9 @@
                 <p>
                     Message: {{form.body(rows=15, cols=60)|nl2br}} 
                     Link: {{form.link(class_='admin-form-field')}}
-                </br>
-                    </br>
+                    </br></br>
                     {{form.image()}}
-
-
-
-                
-
+                    {{form.content_type}}
                 </p>
                 <p><input type="submit" value="Create"></p>
             </form>
