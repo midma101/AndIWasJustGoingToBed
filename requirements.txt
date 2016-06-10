@@ -18,6 +18,7 @@ MarkupSafe==0.18
 migrate==0.3.8
 paramiko==1.12.0
 pbr==0.5.23
+psycopg2==2.6.1
 pycrypto==2.6.1
 PyMySQL==0.6.1
 pysftp==0.2.8
